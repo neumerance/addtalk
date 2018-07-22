@@ -1,0 +1,16 @@
+<% content_for :for_head do %>
+  <%= stylesheet_link_tag :login %>
+<% end %>
+<div class="container">
+  <div class="login-container">
+    <div id="output"></div>
+    <div class="avatar"></div>
+    <div class="form-box">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: 'email' %>
+        <%= f.password_field :password, autocomplete: 'off', placeholder: 'password' %>
+        <%= button_tag 'Log in', class: 'btn btn-info btn-block login' %>
+      <% end %>
+    </div>
+  </div>
+</div>
